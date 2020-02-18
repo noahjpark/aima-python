@@ -1567,12 +1567,39 @@ def compare_searchers(problems, header,
             totalcost = p.path_cost(totalcost, states[i], states[i + 1], states[i + 1])
         return p, totalcost
 
+    average_cost1 = 0
+    standard_dev1 = 0
+    ls = []
+    for s in searchers:
+        tp = do(s, problems[0])
+        average_cost1 += tp[1]
+        ls += tp[1]
     
-    average_cost = 0
-    standard_dev = 0
+    standard_dev1 = stdev(ls) 
+        
+    average_cost2 = 0
+    standard_dev2 = 0
+    ls = []
+    for s in searchers:
+        tp = do(s, problems[1])
+        average_cost2 += tp[1]
+        ls += tp[1]
+        
+    standard_dev2 = stdev(ls)
+    
+    average_cost3 = 0
+    standard_dev3 = 0
+    ls = []
+    for s in searchers:
+        tp = do(s, problems[1])
+        average_cost3 += tp[1]
+        ls += tp[1]
+        
+    standard_dev3 = stdev(ls)
+    
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
-    table.append[["Average Cost: "] + [average_cost]]
-    table.append[["Standard Deviation: "] + [standard_dev]]
+    table.append[["Average Cost: "] + [average_cost1] + [average_cost2] + [average_cost3]]
+    table.append[["Standard Deviation: "] + [standard_dev1] + [standard_dev2] + [standard_dev3]]
     print_table(table, header)
 
 
