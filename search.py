@@ -1600,10 +1600,6 @@ def compare_searchers(problems, header,
     average_cost3 /= len(data3)
     standard_dev3 = statistics.stdev(data3)
     
-    print(data1)
-    print(data2)
-    print(data3)
-    
     avg = "Average Cost: "
     sd = "Standard Deviation: "
     
