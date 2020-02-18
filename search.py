@@ -1561,6 +1561,8 @@ def compare_searchers(problems, header,
     def do(searcher, problem):
         p = InstrumentedProblem(problem)
         searcher(p)
+        pc = p.path_cost(0, p.succs, p.goal_tests, p.states)
+        print(pc)
         return p
 
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
