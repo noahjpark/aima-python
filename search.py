@@ -1601,9 +1601,12 @@ def compare_searchers(problems, header,
     average_cost3 /= len(data)
     standard_dev3 = statistics.stdev(data)
     
+    avg = "Average Cost: "
+    sd = "Standard Deviation: "
+    
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
-    table.append[["Average Cost: "] + [average_cost1] + [average_cost2] + [average_cost3]]
-    table.append[["Standard Deviation: "] + [standard_dev1] + [standard_dev2] + [standard_dev3]]
+    table.append[[avg] + [average_cost1] + [average_cost2] + [average_cost3]]
+    table.append[[sd] + [standard_dev1] + [standard_dev2] + [standard_dev3]]
     print_table(table, header)
 
 
