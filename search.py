@@ -1566,8 +1566,7 @@ def compare_searchers(problems, header,
         totalcost = p.path_cost(0, p.initial, states[0], states[0])
         for i in range (len(states) - 1):
             totalcost = p.path_cost(totalcost, states[i], states[i + 1], states[i + 1])
-            print(totalcost)
-        return p
+        return p, totalcost
 
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
     print_table(table, header)
