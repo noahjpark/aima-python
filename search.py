@@ -1563,8 +1563,10 @@ def compare_searchers(problems, header,
         searcher(p)
         states = searcher(p).solution()
         print(states)
+        totalcost = p.path_cost(0, init, states[0], states[0])
         for i in range (len(states) - 1):
-            print(p.path_cost(0, states[i], states[i], states[i + 1]))
+            totalcost = p.path_cost(totalcost, states[i], states[i + 1], states[i + 1])
+            print(totalcost)
         return p
 
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
