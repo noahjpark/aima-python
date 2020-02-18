@@ -1563,7 +1563,7 @@ def compare_searchers(problems, header,
         searcher(p)
         states = searcher(p).solution()
         print(states)
-        for i in range len(states - 1):
+        for i in range (len(states) - 1):
             print(p.path_cost(0, states[i], states[i], states[i + 1]))
         return p
 
