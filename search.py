@@ -1577,8 +1577,6 @@ def compare_searchers(problems, header,
     
     average_cost1 /= len(data1)
     standard_dev1 = statistics.stdev(data1) 
-    for i in data1:
-        print(data1)
         
     average_cost2 = 0
     standard_dev2 = 0
@@ -1595,12 +1593,16 @@ def compare_searchers(problems, header,
     standard_dev3 = 0
     data3 = []
     for s in searchers:
-        tp = do(s, problems[1])
+        tp = do(s, problems[2])
         average_cost3 += tp[1]
         data3.append(tp[1])
         
     average_cost3 /= len(data3)
     standard_dev3 = statistics.stdev(data3)
+    
+    print(data1)
+    print(data2)
+    print(data3)
     
     avg = "Average Cost: "
     sd = "Standard Deviation: "
