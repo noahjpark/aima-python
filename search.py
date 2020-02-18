@@ -1569,33 +1569,33 @@ def compare_searchers(problems, header,
 
     average_cost1 = 0
     standard_dev1 = 0
-    ls = []
+    data = []
     for s in searchers:
         tp = do(s, problems[0])
         average_cost1 += tp[1]
-        ls += tp[1]
+        data.append(tp[1])
     
-    standard_dev1 = stdev(ls) 
+    standard_dev1 = stdev(data) 
         
     average_cost2 = 0
     standard_dev2 = 0
-    ls = []
+    data = []
     for s in searchers:
         tp = do(s, problems[1])
         average_cost2 += tp[1]
-        ls += tp[1]
+        data.append(tp[1])
         
-    standard_dev2 = stdev(ls)
+    standard_dev2 = stdev(data)
     
     average_cost3 = 0
     standard_dev3 = 0
-    ls = []
+    data = []
     for s in searchers:
         tp = do(s, problems[1])
         average_cost3 += tp[1]
-        ls += tp[1]
+        data.append(tp[1])
         
-    standard_dev3 = stdev(ls)
+    standard_dev3 = stdev(data)
     
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
     table.append[["Average Cost: "] + [average_cost1] + [average_cost2] + [average_cost3]]
