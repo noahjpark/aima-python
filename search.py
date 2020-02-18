@@ -1557,8 +1557,7 @@ def compare_searchers(problems, header,
                                  breadth_first_graph_search,
                                  depth_first_graph_search,
                                  iterative_deepening_search,
-                                 depth_limited_search,
-                                 recursive_best_first_search]):
+                                 depth_limited_search]):
     def do(searcher, problem):
         p = InstrumentedProblem(problem)
         searcher(p)
@@ -1601,13 +1600,13 @@ def compare_searchers(problems, header,
     average_cost3 /= len(data)
     standard_dev3 = statistics.stdev(data)
     
-    avg = "Average Cost "
+    avg = "Average Cost: "
     sd = "Standard Deviation: "
     
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
-    print(avg + "Arad->Bucharest: ", average_cost1, " " + avg + "Oradea->Neamt: ", average_cost2, " " + avg + "Eforie->Timisoara: ", average_cost3)
     print_table(table, header)
-
+    print(avg + "Arad->Bucharest: ", average_cost1, " " + avg + "Oradea->Neamt: ", average_cost2, " " + avg + "Eforie->Timisoara: ", average_cost3)
+    print(sd + "Arad->Bucharest: ", standard_dev1, " " + sd + "Oradea->Neamt: ", standard_dev2, " " + sd + "Eforie->Timisoara: ", standard_dev3)
 
 def compare_graph_searchers():
     """Prints a table of search results."""
