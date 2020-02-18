@@ -1562,13 +1562,17 @@ def compare_searchers(problems, header,
         p = InstrumentedProblem(problem)
         searcher(p)
         states = searcher(p).solution()
-        print(states)
         totalcost = p.path_cost(0, p.initial, states[0], states[0])
         for i in range (len(states) - 1):
             totalcost = p.path_cost(totalcost, states[i], states[i + 1], states[i + 1])
         return p, totalcost
 
+    
+    average_cost = 0
+    standard_dev = 0
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
+    table.append[["Average Cost: "] + [average_cost]]
+    table.append[["Standard Deviation: "] + [standard_dev]]
     print_table(table, header)
 
 
