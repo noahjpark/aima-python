@@ -1561,7 +1561,7 @@ def compare_searchers(problems, header,
     def do(searcher, problem):
         p = InstrumentedProblem(problem)
         searcher(p)
-        pc = p.path_cost(0, p.succs, p.goal_tests, p.states)
+        pc = p.path_cost(0, p.succs, p.goal_tests, searcher(p))
         print(pc)
         return p
 
