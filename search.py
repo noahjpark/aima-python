@@ -1569,43 +1569,47 @@ def compare_searchers(problems, header,
 
     average_cost1 = 0
     standard_dev1 = 0
-    data = []
+    data1 = []
     for s in searchers:
         tp = do(s, problems[0])
         average_cost1 += tp[1]
-        data.append(tp[1])
+        data1.append(tp[1])
     
-    average_cost1 /= len(data)
-    standard_dev1 = statistics.stdev(data) 
+    average_cost1 /= len(data1)
+    standard_dev1 = statistics.stdev(data1) 
+    for i in data1:
+        print(data1)
         
     average_cost2 = 0
     standard_dev2 = 0
-    data = []
+    data2 = []
     for s in searchers:
         tp = do(s, problems[1])
         average_cost2 += tp[1]
-        data.append(tp[1])
+        data2.append(tp[1])
         
-    average_cost2 /= len(data)
-    standard_dev2 = statistics.stdev(data)
+    average_cost2 /= len(data2)
+    standard_dev2 = statistics.stdev(data2)
     
     average_cost3 = 0
     standard_dev3 = 0
-    data = []
+    data3 = []
     for s in searchers:
         tp = do(s, problems[1])
         average_cost3 += tp[1]
-        data.append(tp[1])
+        data3.append(tp[1])
         
-    average_cost3 /= len(data)
-    standard_dev3 = statistics.stdev(data)
+    average_cost3 /= len(data3)
+    standard_dev3 = statistics.stdev(data3)
     
     avg = "Average Cost: "
     sd = "Standard Deviation: "
     
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
     print_table(table, header)
+    print("\n")
     print(avg + "Arad->Bucharest: ", average_cost1, " | " + avg + "Oradea->Neamt: ", average_cost2, " | " + avg + "Eforie->Timisoara: ", average_cost3)
+    print("\n")
     print(sd + "Arad->Bucharest: ", standard_dev1, " | " + sd + "Oradea->Neamt: ", standard_dev2, " | " + sd + "Eforie->Timisoara: ", standard_dev3)
 
 def compare_graph_searchers():
