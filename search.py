@@ -6,6 +6,7 @@ then create problem instances and solve them with calls to the various search
 functions.
 """
 
+import statistics
 import sys
 from collections import deque
 
@@ -1575,7 +1576,8 @@ def compare_searchers(problems, header,
         average_cost1 += tp[1]
         data.append(tp[1])
     
-    standard_dev1 = stdev(data) 
+    average_cost1 /= len(data)
+    standard_dev1 = statistics.stdev(data) 
         
     average_cost2 = 0
     standard_dev2 = 0
@@ -1585,7 +1587,8 @@ def compare_searchers(problems, header,
         average_cost2 += tp[1]
         data.append(tp[1])
         
-    standard_dev2 = stdev(data)
+    average_cost2 /= len(data)
+    standard_dev2 = statistics.stdev(data)
     
     average_cost3 = 0
     standard_dev3 = 0
@@ -1595,7 +1598,8 @@ def compare_searchers(problems, header,
         average_cost3 += tp[1]
         data.append(tp[1])
         
-    standard_dev3 = stdev(data)
+    average_cost3 /= len(data)
+    standard_dev3 = statistics.stdev(data)
     
     table = [[name(s)] + [do(s, p) for p in problems] for s in searchers]
     table.append[["Average Cost: "] + [average_cost1] + [average_cost2] + [average_cost3]]
