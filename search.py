@@ -1576,6 +1576,6 @@ def compare_graph_searchers():
     """Prints a table of search results."""
     compare_searchers(problems=[GraphProblem('Arad', 'Bucharest', romania_map),
                                 GraphProblem('Oradea', 'Neamt', romania_map),
-                                GraphProblem('Q', 'WA', australia_map)],
+                                GraphProblem('Eforie', 'Timisoara', romania_map)],
                       header=['Searcher', 'romania_map(Arad, Bucharest)',
                               'romania_map(Oradea, Neamt)', 'australia_map'])
