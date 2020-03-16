@@ -1439,51 +1439,62 @@ send_more_money = NaryCSP({'S': set(range(1, 10)), 'M': set(range(1, 10)),
 def main():
     print("Backtracking Search for n-queens problem: ")
     print("4 Queens: ")
-    b1 = backtracking_search(NQueensCSP(4))
+    b1 = NQueensCSP(4))
+    backtracking_search(b1)
     b1.display(b1.infer_assignment())
     print("12 Queens: ")
-    b2 = backtracking_search(NQueensCSP(12))
+    b2 = NQueensCSP(12)
+    backtracking_search(b2)
     b2.display(b2.infer_assignment())
     print("20 Queens: ")
-    b3 = backtracking_search(NQueensCSP(20))
+    b3 = NQueensCSP(20)
+    backtracking_search(b3)
     b3.display(b3.infer_assignment())
     print("\n")
     
     print("Forward Checking Searh for n-queens problem with 4, 12, and 20 queens respectively: ")
     print("4 Queens: ")
-    f1 = backtracking_search(NQueensCSP(4), inference = forward_checking)
+    f1 = NQueensCSP(4)
+    backtracking_search(f1, inference = forward_checking)
     f1.display(f1.infer_assignment())
     print("12 Queens: ")
-    f2 = backtracking_search(NQueensCSP(12), inference = forward_checking)
+    f2 = NQueensCSP(12)
+    backtracking_search(f2, inference = forward_checking)
     f2.display(f2.infer_assignment())
     print("20 Queens: ")
-    f3 = backtracking_search(NQueensCSP(20), inference = forward_checking)
+    f3 = NQueensCSP(20)
+    backtracking_search(f3, inference = forward_checking)
     f3.display(f3.infer_assignment())
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 3 colors: ")
-    b4 = backtracking_search(australia_csp)
+    b4 = australia_csp
+    backtracking_search(b4)
     b4.display(b4.infer_assignment())
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 4 colors: ")
-    b5 = backtracking_search(australia_csp4)
+    b5 = australia_csp4
+    backtracking_search(b5)
     b5.display(b5.infer_assignment())
     print("The solutions are the same; 3 colors is enough, 4 are not needed.")
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 2 colors: ")
-    b6 = backtracking_search(australia_csp2)
+    b6 = australia_csp2
+    backtracking_search(b6)
     b6.display(b6.infer_assignment())
     print("\n")
     
     print("AC-3 Algorithm for Australia map-coloring problem: ")
-    a1 = AC3(australia_csp)
+    a1 = australia_csp
+    AC3(a1)
     a1.display(a1.infer_assignment())
     print("\n")
     
     print("Backtracking Search for USA map-coloring problem: ")
-    u1 = backtracking_search(usa_csp)
+    u1 = usa_csp
+    backtracking_search(u1)
     u1.display(u1.infer_assignment())
     print("\n")
   
