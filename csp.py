@@ -1441,6 +1441,7 @@ def main():
     print(backtracking_search(NQueensCSP(12)))
     print("20 Queens: ")
     print(backtracking_search(NQueensCSP(20)))
+    print("\n")
     
     print("Forward Checking Searh for n-queens problem with 4, 12, and 20 queens respectively: ")
     print("4 Queens: ")
