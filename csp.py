@@ -598,6 +598,7 @@ def parse_neighbors(neighbors):
             dic[B].append(A)
     return dic
 
+australia_csp2 = MapColoringCSP(list('RB'), """SA: WA NT Q NSW V; NT: WA Q; NSW: Q V; T: """)
 
 australia_csp = MapColoringCSP(list('RGB'), """SA: WA NT Q NSW V; NT: WA Q; NSW: Q V; T: """)
 
@@ -1460,7 +1461,15 @@ def main():
     
     print("Backtracking Search for Australia map-coloring problem with 4 color: ")
     print(backtracking_search(australia_csp4))
+    print("\n")
     
+    print("AC-3 Algorithm for Australia map-coloring problem: ")
+    print(AC3(australia_csp))
+    print("\n")
+    
+    print("Backtracking Search for USA map-coloring problem: ")
+    print(backtracking_search(usa_csp))
+    print("\n")
   
     
     
