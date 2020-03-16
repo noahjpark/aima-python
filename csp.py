@@ -1450,6 +1450,16 @@ def main():
     print(backtracking_search(NQueensCSP(12), inference = forward_checking))
     print("20 Queens: ")
     print(backtracking_search(NQueensCSP(20), inference = forward_checking))
+    print("\n")
+    
+    print("Backtracking Search for Australia map-coloring problem with 3 colors: ")
+    print(backtracking_search(australia_csp('RGB')))
+    print("\n")
+    
+    print("Backtracking Search for Australia map-coloring problem with 4 color: ")
+    print(backtracking_search(australia_csp('RGBY')))
+    
+  
     
     
     
