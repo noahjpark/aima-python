@@ -1432,3 +1432,19 @@ send_more_money = NaryCSP({'S': set(range(1, 10)), 'M': set(range(1, 10)),
                            Constraint(('E', 'O', 'N', 'C2', 'C3'), lambda e, o, n, c2, c3: c2 + e + o == n + 10 * c3),
                            Constraint(('S', 'M', 'O', 'C3', 'C4'), lambda s, m, o, c3, c4: c3 + s + m == o + 10 * c4),
                            Constraint(('M', 'C4'), eq)])
+
+def main():
+    print("Backtracking Search for n-queens problem with 4, 12, and 20 queens respectively: ")
+    backtracking_search(NQueens(4))
+    backtracking_search(NQueens(12))
+    backtracking_search(NQueens(20))
+    
+    print("Forward Checking Searh for n-queens problem with 4, 12, and 20 queens respectively: ")
+    forward_checking(NQueens(4))
+    forward_checking(NQueens(12))
+    forward_checking(NQueens(20))
+    
+    
+    
+if __name__ == "__main__":
+    main()
