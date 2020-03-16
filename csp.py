@@ -601,6 +601,8 @@ def parse_neighbors(neighbors):
 
 australia_csp = MapColoringCSP(list('RGB'), """SA: WA NT Q NSW V; NT: WA Q; NSW: Q V; T: """)
 
+australia_csp4 = MapColoringCSP(list('RGBY'), """SA: WA NT Q NSW V; NT: WA Q; NSW: Q V; T: """)
+
 usa_csp = MapColoringCSP(list('RGBY'),
                          """WA: OR ID; OR: ID NV CA; CA: NV AZ; NV: ID UT AZ; ID: MT WY UT;
                          UT: WY CO AZ; MT: ND SD WY; WY: SD NE CO; CO: NE KA OK NM; NM: OK TX AZ;
@@ -1457,7 +1459,7 @@ def main():
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 4 color: ")
-    print(backtracking_search(australia_csp))
+    print(backtracking_search(australia_csp4))
     
   
     
