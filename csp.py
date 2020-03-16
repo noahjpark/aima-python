@@ -1439,7 +1439,7 @@ send_more_money = NaryCSP({'S': set(range(1, 10)), 'M': set(range(1, 10)),
 def main():
     print("Backtracking Search for n-queens problem: ")
     print("4 Queens: ")
-    b1 = NQueensCSP(4))
+    b1 = NQueensCSP(4)
     backtracking_search(b1)
     b1.display(b1.infer_assignment())
     print("12 Queens: ")
