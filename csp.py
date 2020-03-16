@@ -1459,8 +1459,13 @@ def main():
     print(backtracking_search(australia_csp))
     print("\n")
     
-    print("Backtracking Search for Australia map-coloring problem with 4 color: ")
+    print("Backtracking Search for Australia map-coloring problem with 4 colors: ")
     print(backtracking_search(australia_csp4))
+    print("The solutions are the same; 3 colors is enough, 4 are not needed.")
+    print("\n")
+    
+    print("Backtracking Search for Australia map-coloring problem with 2 colors: ")
+    print(backtracking_search(australia_csp2))
     print("\n")
     
     print("AC-3 Algorithm for Australia map-coloring problem: ")
