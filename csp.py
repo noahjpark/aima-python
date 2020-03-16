@@ -1453,11 +1453,11 @@ def main():
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 3 colors: ")
-    print(backtracking_search(australia_csp('RGB')))
+    print(backtracking_search(australia_csp))
     print("\n")
     
     print("Backtracking Search for Australia map-coloring problem with 4 color: ")
-    print(backtracking_search(australia_csp('RGBY')))
+    print(backtracking_search(australia_csp))
     
   
     
